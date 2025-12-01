@@ -1,7 +1,7 @@
 resource "aws_security_group" "main" {
-  name        = "allow_tls"
-  description = "Allow TLS inbound traffic and all outbound traffic"
-  vpc_id      = aws_vpc.main.id
+  name        = var.sg_name #catalogue
+  description = var.sg_description
+  vpc_id      = var.vpc_id
 
    egress {
     from_port        = 0
